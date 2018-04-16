@@ -1,0 +1,69 @@
+pragma  solidity ^0.4.4;
+
+contract Voting
+{
+    string vote;
+    int vote1;
+    int vote2;
+    string result;
+    
+    uint count = 0;
+    
+    function castVote(string _vote)
+    {
+        vote = _vote;
+        
+        if(compareStrings(_vote,"a"))
+        vote1++;
+        else
+        vote2++;
+    }
+    function displayResult() public constant returns (string){
+        if(vote1>vote2)
+        return "A";
+        else
+        return "B";
+    }
+    /*
+    function setVote(string _vote)
+    {
+        vote = _vote;
+        setCount();
+    }
+    
+    function setCount()
+    {
+        count ++;
+    }
+    
+    function getVote() public constant returns (string)
+    {
+        return vote;
+    }
+    
+    function getcount() public constant returns(uint)
+    {
+        return count;
+    }
+    
+    function EnterStrings(string a) returns (bool)
+    {
+        if(compareStrings(a,"a"))
+        {
+        tmp = "true";
+        count++;
+        }
+        else
+        tmp = "false";
+        
+    }
+    
+    function displayString() public constant returns(string)
+    {
+        return tmp;
+    }
+    */
+    function compareStrings (string a, string b) view returns (bool){
+       return keccak256(a) == keccak256(b);
+   }
+}
