@@ -9,6 +9,10 @@ contract Voting
     
     uint count = 0;
     
+    fucntion a
+    {
+    }
+    
     function castVote(string _vote)
     {
         vote = _vote;
